@@ -1,13 +1,14 @@
 
 
 //스택을 연결 자료구조로 구현해본다.
-interface Stack{
-	boolean isEmpty();
-	void push(char item);
-	char pop();
-	void delete();
-	char peek();
-}
+//interface Stack{
+//	boolean isEmpty();
+//	void push(char item);
+//	char pop();
+//	void delete();
+//	char peek();
+//}
+// 인터페이스는 Stack_Array.java의 Stack과 동일하므로 생략
 
 class StackNode{
 	char data;		//요소
@@ -15,10 +16,10 @@ class StackNode{
 }
 
 class LinkedStack implements Stack{	//인터페이스 구현
-	private StackNode top;	//참조변수 (스택은 LIFO구조이기 때문에 top은 항상 가장 나중에 들어온 노드를 가리켜야 한다.)
+	private StackNode top;			//참조변수 (스택은 LIFO구조이기 때문에 top은 항상 가장 나중에 들어온 노드를 가리켜야 한다.)
 	
-	public boolean isEmpty() {	//isEmpty()메소드는 top에 저장된 값이 비었는지(null) 아닌지를 판단하여 boolean형태로 리턴
-		return (top == null);	//비었다면 true 아니라면 false를 리턴
+	public boolean isEmpty() {		//isEmpty()메소드는 top에 저장된 값이 비었는지(null) 아닌지를 판단하여 boolean형태로 리턴
+		return (top == null);		//비었다면 true 아니라면 false를 리턴
 	}
 	
 	public void push(char item) {	//push()메소드는 매개변수로 받은 값을 요소로 저장시켜준다
@@ -61,7 +62,7 @@ class LinkedStack implements Stack{	//인터페이스 구현
 	
 	public void printStack() {
 		if(isEmpty()) {
-			System.out.printf("Linked Stack is empty!! %n %n");
+			System.out.printf("Linked Stack is empty!!%n%n");
 		}else {
 			StackNode temp = top;	//temp에 top의 참조값을 넣음 -> 리스트의 시작주소(마지막으로 입력된 노드의 주소) 
 			System.out.println("Linked Stack >> ");
@@ -74,7 +75,7 @@ class LinkedStack implements Stack{	//인터페이스 구현
 	}
 
 }
-public class StackLinked {
+public class Stack_Linked {
 	public static void main(String[] args) {
 		char deletedItem;
 		LinkedStack LS = new LinkedStack();
