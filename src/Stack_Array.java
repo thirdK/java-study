@@ -35,18 +35,18 @@ class ArrayStack implements Stack{ //interface 구현
 		if(isFull()) {			//더이상 공간이 없다면 true가 반환되어 아래 메세지 출력
 			System.out.println("Inserting fail! Array Stack is full!");
 		}else {
-			itemArray[++top] = item;	//공간이 남아있다면 top를 증가시킨 값을 index로
+			itemArray[++top] = item;	//공간이 남아있다면 top을 증가시킨 후 index로
 										//사용하여 매개변수로 받은 값을 저장(처음 top은 -1로 초기화되어 있다.)
 			System.out.println("Inserted Item : " + item);
 		}
 	}
 	
-	public char pop() {	//마지막 index값을 반환하고 삭제하는 pop() 메소드
+	public char pop() {	//마지막 index의 값을 반환하고 삭제하는 pop() 메소드
 		if(isEmpty()) {
 			System.out.println("Deleting fail! Array Stack is empty!!");
 			return 0;
 		}else {
-			return itemArray[top--];	//마지막 index의 값을 반환 후 top를 1 감소
+			return itemArray[top--];	//마지막 index의 값을 반환 후 top를 감소
 										//top은 마지막 인덱스를 저장하고 있으므로 1을 감소시키면
 										//마지막 데이터를 삭제하는것과 같다.
 		}
@@ -57,7 +57,7 @@ class ArrayStack implements Stack{ //interface 구현
 			System.out.println("Deleting fail! Array Stack is empty!!");
 		}else {
 			top--;						//pop()메소드와 달리 return이 필요없이 삭제만하므로 
-										//별다른거 없이 top을 1로 감소
+										//별다른거 없이 top을 감소
 		}
 	}
 	
