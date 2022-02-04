@@ -1,14 +1,5 @@
 
 //연결 자료구조 방식으로 연결 큐를 구현
-//인터페이스는 이미 Queue_Array01.java에 존재
-
-//interface Queue {
-//	boolean isEmpty();
-//	void enQueue();
-//	char deQueue();
-//	void delete();
-//	char peek();
-//}
 
 class QNode {
 	char data;

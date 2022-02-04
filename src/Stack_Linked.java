@@ -1,14 +1,5 @@
 
-
 //스택을 연결 자료구조로 구현해본다.
-//interface Stack{
-//	boolean isEmpty();
-//	void push(char item);
-//	char pop();
-//	void delete();
-//	char peek();
-//}
-// 인터페이스는 Stack_Array.java의 Stack과 동일하므로 생략
 
 class StackNode{
 	char data;		//요소

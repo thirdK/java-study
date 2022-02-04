@@ -1,6 +1,6 @@
 
 //스택을 순차 자료구조로 구현해본다.
-
+//연결 자료구조 스택에서도 동일하게 사용할 메소드형태라서 interface로
 interface Stack{
 	boolean isEmpty();
 	void push(char item);

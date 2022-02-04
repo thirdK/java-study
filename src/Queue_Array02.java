@@ -4,16 +4,6 @@
 //저장되어 있는 원소를 배열의 앞으로 이동시켜야하는데 드러면 큐의 효율성이 떨어진다.
 //그런 선형 큐의 문제를 해결하기 위해 원형 큐를 사용한다.
 
-//인터페이스는 Queue_Array01의 Queue를 사용한다.
-
-//interface Queue{
-//	boolean isEmpty();
-//	void enQueue(char item);
-//	char deQueue();
-//	void delete();
-//	char peek();
-//}
-
 class ArrayCQueue implements Queue{
 	private int front;
 	private int rear;
