@@ -65,12 +65,12 @@ class LinkedStack implements Stack{	//인터페이스 구현
 			System.out.printf("Linked Stack is empty!!%n%n");
 		}else {
 			StackNode temp = top;	//temp에 top의 참조값을 넣음 -> 리스트의 시작주소(마지막으로 입력된 노드의 주소) 
-			System.out.println("Linked Stack >> ");
+			System.out.print("Linked Stack >> ");
 			while(temp != null) {	//temp가 null이 아니면 반복 -> null이라면 정지(리스트의 처음부터 마지막까지 반복)
-				System.out.printf("\t %c \n", temp.data);
+				System.out.printf("%c ", temp.data);
 				temp = temp.link;	//다음 노드의 주소를 temp에 넣음
 			}
-			System.out.println();
+			System.out.println("\n");
 		}
 	}
 
@@ -89,7 +89,7 @@ public class Stack_Linked {
 		LS.push('C');
 		LS.printStack();
 		
-		System.out.println("\tpeek >> " + LS.peek());
+		System.out.println("peek >> " + LS.peek());
 		System.out.println();
 		
 		deletedItem = LS.pop();

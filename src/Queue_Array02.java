@@ -33,7 +33,7 @@ class ArrayCQueue implements Queue{
 	
 	public boolean isFull() {
 		return (((rear+1) % this.queueSize) == front);
-		//rear+1을 길이로 나눈 나머지는 원형큐에서 삽입을 할 때 위치를 나타낸다.
+		//[rear+1]을 [길이]로 나눈 [나머지]는 원형큐에서 삽입을 할 때 위치를 나타낸다.
 		//그 위치가 front와 같다면 큐는 가득찬것이다.(front가 위치하는곳은 항상 비워둔다.)
 	}
 	
@@ -84,12 +84,12 @@ class ArrayCQueue implements Queue{
 		if(isEmpty()) {
 			System.out.println("Array Circular Queue is empty!!");
 		}else {
-			System.out.println("Array Circular Queue >> ");
+			System.out.print("Array Circular Queue >> ");
 			for(int i=(front+1) % this.queueSize; i!=(rear+1)%this.queueSize; i= ++i%this.queueSize) {
 				//처음이 되는 값 부터 ; 마지막 값 까지; i++한다 구조상 0으로 넘어갈 수 있게 처리한다.
-				System.out.printf("%c", itemArray[i]);
-				System.out.println("\n");
+				System.out.printf("%c ", itemArray[i]);
 			}
+			System.out.println("\n");
 		}
 	}
 }

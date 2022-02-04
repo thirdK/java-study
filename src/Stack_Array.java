@@ -74,11 +74,11 @@ class ArrayStack implements Stack{ //interface 구현
 		if(isEmpty()) {
 			System.out.printf("Array Stack is empty!!%n%n");
 		}else {
-			System.out.println("Array Stack >> ");
+			System.out.print("Array Stack >> ");
 			for(int i=0; i<=top; i++) {
-				System.out.printf("%c", itemArray[i]);
+				System.out.printf("%c ", itemArray[i]);
 			}
-			System.out.println(); System.out.println();
+			System.out.println("\n");
 		}
 	}
 
@@ -109,7 +109,7 @@ public class Stack_Array {
 		System.out.println(S.peek()); 
 		System.out.println();
 		
-		System.out.println("delete()\n");
+		System.out.println("delete\n");
 		S.delete();
 		
 		S.printStack();

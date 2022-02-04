@@ -75,9 +75,9 @@ class ArrayQueue implements Queue{
 		if(isEmpty()) {
 			System.out.println("Array Queue is empty!!\n");
 		}else {
-			System.out.println("Array Queue >> ");
+			System.out.print("Array Queue >> ");
 			for(int i=front+1; i<=rear; i++) {
-				System.out.printf("%c", itemArray[i]);
+				System.out.printf("%c ", itemArray[i]);
 			}
 			System.out.println("\n");
 		}
