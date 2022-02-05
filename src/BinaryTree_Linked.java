@@ -55,9 +55,9 @@ public class BinaryTree_Linked {
 	public static void main(String[] args) {
 		LinkedTree T = new LinkedTree();
 		
-//lv0				n1(-)
+//lv0			    n1(-)
 //lv1		n2(*)			n3(/)
-//lv2	n4(A)	n5(B)	n6(C)	n7(D)
+//lv2	n4(A)		n5(B)	n6(C)		n7(D)
 		
 		
 		//가장 아래위치하는 level2 는 더이상 자식노드가 없으므로 참조값은 양쪽 모두 null
