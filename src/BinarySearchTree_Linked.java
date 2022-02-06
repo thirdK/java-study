@@ -14,12 +14,10 @@ class TreeNode1{	//이진트리 노드
 //각각의 서브 트리도 이진 탐색트리의 특징을 갖는다.
 
 class BinarySearchTree{
+	//root노드를 생성한다. 최초의 data값은 root의 data필드에 저장되고
+	//이후에 추가되는 data는 root에 트리형식으로 연결될 것이다.
 	private TreeNode1 root = new TreeNode1();
-	
-	public void insertBST(char x) {
-		root = insertKey(root, x);
-	}
-	
+		
 	
 	public TreeNode1 insertKey(TreeNode1 root, char x) {//삽입을 담당하는 메소드(삽입을 위해 탐색과 같은 작업도 이루어진다.)
 		TreeNode1 p = root;	//매개변수로 넘겨받은 노드를 p에게 넘긴다.(p는 새 노드의 자리를 찾기위한 비교대상이다.)
@@ -42,6 +40,14 @@ class BinarySearchTree{
 	}
 	
 	
+	// insertBST()메소드는 들어오는 data값을 root노드와(트리의 시작지점) 함께 insertKey()로 넘겨주고 반환된 값을 root에 저장한다.
+	//여기서 반환되는 값은 insertKey()의 조건문을 거쳐서 노드가 추가되거나 그대로 반환될 것이다.
+	//기존 root의 트리에 저장된 값들은 유지된 상태로 하나의 노드의 추가 유/무를 정하는것이다.
+	public void insertBST(char x) {
+		root = insertKey(root, x);
+	}
+	
+	
 	public TreeNode1 searchBST(char x) {//탐색기능
 		TreeNode1 p = root;
 		while(p != null) {	
@@ -50,10 +56,10 @@ class BinarySearchTree{
 			}else if(x > p.data) {
 				p = p.right;
 			}else {
-				return p;	////값과 data를 비교하여 찾아내면 반환
+				return p;	//검색할 값과 트리에 저장된 data를 비교하여 찾아내면 반환하고
 			}
 		}
-		return p;	//없으면 위의 반복문 때문에 null이 반환된다.
+		return p;	//없으면 위의 반복문 때문에 null이 반환된다.(트리의 가장 마지막 level의 node들은 좌/우에 null이 있다.)
 	}
 	
 	public void inorder(TreeNode1 root) {//중위순회(LDR)
