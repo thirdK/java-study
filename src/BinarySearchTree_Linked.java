@@ -21,8 +21,8 @@ class BinarySearchTree{
 	}
 	
 	
-	public TreeNode1 insertKey(TreeNode1 root, char x) {//삽입을 담당하는 메소드(삽입을 위해 탐색과 같은 작업이 이루어진다.)
-		TreeNode1 p = root;	//매개변수로 넘겨받은 참조값을 p에게 넘긴다.(p는 새 노드의 자리를 찾기위한 비교대상이다.)
+	public TreeNode1 insertKey(TreeNode1 root, char x) {//삽입을 담당하는 메소드(삽입을 위해 탐색과 같은 작업도 이루어진다.)
+		TreeNode1 p = root;	//매개변수로 넘겨받은 노드를 p에게 넘긴다.(p는 새 노드의 자리를 찾기위한 비교대상이다.)
 		TreeNode1 newNode = new TreeNode1();	//새 노드 생성
 		newNode.data = x;
 		newNode.left = null;	//새로 생성한 노드의 좌/우에 null
