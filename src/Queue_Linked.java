@@ -85,7 +85,7 @@ class LinkedQueue implements Queue {
 	}
 }
 
-public class Queue_Lincked {
+public class Queue_Linked {
 	public static void main(String[] args) {
 		char deletedItem;
 		LinkedQueue LQ = new LinkedQueue();
