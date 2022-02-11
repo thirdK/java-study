@@ -1,3 +1,4 @@
+package dataStructure;
 
 //연결 자료구조 방식으로 이진 탐색 트리를 구현하고 연산하는 프로그램
 

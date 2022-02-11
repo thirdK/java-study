@@ -1,6 +1,8 @@
+package dataStructure;
 //그래프는 연결되어있는 원소간의 관계를 표현하는 자료구조이다. 지하철 노선처럼 여러 관계가 연결되어 있으면
 //연결 구조가 너무 다양하여 선형 자료구조나 트리로는 표현이 불가능하다 이러한 자료들을 표현하기 윈한 자료구조가 그래프다.
 //그래프는 모든 연결 구조를 표현할 수 있다.
+
 
 //정점(vertex) -> 연결할 객체
 //간선(edge) -> 객체를 연결하는 일종의 선
@@ -84,8 +86,8 @@ class AdjList{
 		} else {
 			GraphNode gNode = new GraphNode();	//노드 생성
 			gNode.vertex = v2;					//정점필드에 값을 넣고
-			gNode.link = head[v1];				//링크필드에 v1헤드배열의 참조값을 넣고
-			head[v1] = gNode;					//head[v1]에 노드를 넣으면
+			gNode.link = head[v1];				//링크필드에 v1헤드배열이 가진 참조값을 넣고
+			head[v1] = gNode;					//head[v1]가 생성된 노드의 주소를 저장.
 		}										//다음 노드도 위를 반복하여 기존 노드와 연결이 됨
 	}
 	

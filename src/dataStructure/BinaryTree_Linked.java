@@ -1,3 +1,4 @@
+package dataStructure;
 
 
 //연결 자료형식의 이진트리를 순회하는 프로그램

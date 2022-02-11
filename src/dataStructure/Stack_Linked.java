@@ -1,3 +1,4 @@
+package dataStructure;
 
 //스택을 연결 자료구조로 구현해본다.
 

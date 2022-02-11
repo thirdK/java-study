@@ -1,3 +1,4 @@
+package dataStructure;
 //순차 자료구조 방식으로 선형 Queue를 구현하기
 //다른 Queue에서도 동일하게 사용할 메소드 형태이기 때문에 interface로
 interface Queue{
