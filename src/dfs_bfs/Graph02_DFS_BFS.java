@@ -99,7 +99,7 @@ class AdjList {		//인접리스트를 구현
 	}
 
 	public void insertEdge(int v1, int v2) {//매개변수로 받은 정점사이에 간선을 추가하는 메소드
-		if (v1 >= totalV || v2 >= totalV) {//정점이 총 정점수보다 클수는 없음
+		if (v1 >= totalV || v2 >= totalV) {//정점이 총 정점수보다 클 수는 없음
 			System.out.println("그래프에 없는 정점입니다!!");
 		} else {//존재하는 정점이라면
 			GraphNode gNode = new GraphNode();//새 노드를 생성
