@@ -24,12 +24,13 @@ class DQueue{
 	
 	//덱은 양방향으로 삽입 삭제가 가능하기때문에
 	//front에서 삽입/삭제, rear에서 삽입/삭제하는 메소드를 만들어야한다.
+	//큐가 가로로 긴 띠모양이라고 가정하고 (front,좌측) / (rear,우측)으로 가정하여 설명함
 	
 	public void insertFront(char item) {	//front에서 삽입하는 메소드
 		DQNode newNode = new DQNode();		
 		newNode.data = item;
 		if(isEmpty()) {			//비어있다면
-			front = newNode;	//첫 노드이므로 front와 rear가 newNode의 참조값을 저장.
+			front = newNode;	//첫 노드이므로 front와 rear가 newNode의 주소를 저장.
 			rear = newNode;
 			newNode.rlink = null;//첫 노드인 newNode는 가리킬 노드가 없으므로 양쪽의 link에 null
 			newNode.llink = null;
@@ -164,7 +165,7 @@ class DQueue{
 }
 
 
-public class Deque {
+public class Queue_Deque {
 	public static void main(String[] args) {
 		char deletedItem;
 		DQueue DQ = new DQueue();

@@ -16,8 +16,8 @@ class LinkedStack implements Stack{	//인터페이스 구현
 	
 	public void push(char item) {	//push()메소드는 매개변수로 받은 값을 요소로 저장시켜준다
 		StackNode newNode = new StackNode();	//객체선언(참조값을 저장할 공간할당)과 생성(실제값이 저장될 공간 할당)
-		newNode.data = item;		//newNode의 data에는 매개변수로 가져온 요소를 넣고
-		newNode.link = top;			//link에는 top이 저장하고 있는 주소값을 넣는다.(리스트가 비어있어서 첫 노드라면 top이 가진 null)
+		newNode.data = item;		//newNode의 data필드에는 매개변수로 가져온 요소를 넣고
+		newNode.link = top;			//link필드에는 top이 가진 참조값을 넣는다.(리스트가 비어있어서 첫 노드라면 top이 가진 null)
 		top = newNode;				//top에는 새로만든 newNode의 주소값
 		System.out.println("Inserted Item : " + item);
 	}
@@ -29,7 +29,7 @@ class LinkedStack implements Stack{	//인터페이스 구현
 		}else {
 			char item = top.data;	//char형 item 변수를 만들어 top이 가리키는 노드의 요소를 넣고(반환을 위해)
 			top = top.link;			
-			//top이 가리키고 있는 노드의 link에 저장된 참조값을 가져와 top에 참조값으로 넣는다. 
+			//top이 가리키고 있는 (삭제될)노드의 link에 저장된 참조값을 가져와 top에 저장 
 			//(결과는 마지막 노드의 삭제이다. 기존의 마지막 노드는 더이상 리스트에 포함되지 않음) 
 			return item;			//삭제된 요소를 반환
 		}

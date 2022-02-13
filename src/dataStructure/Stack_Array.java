@@ -11,12 +11,12 @@ interface Stack{
 }
 
 class ArrayStack implements Stack{ //interface 구현
-	private int top;
+	private int top;	//top변수를 만들어 항상 마지막에 들어온 index를 저장함
 	private int stackSize;
 	private char itemArray[];	//배열 선언 (참조값을 저장할 공간 할당)
 	
 	public ArrayStack(int stackSize) {	//stack은 LIFO구조이기에 마지막에 들어온 index를 알아야한다. 
-										//top변수를 만들어 마지막 index를 저장할 것이며 stack의 i번째 index는 i-1이다.
+										//stack의 i번째 index는 i-1
 		top = -1;		//초기(공백)상태에는 top에 -1을 넣는다. 
 						//push()메소드에서 데이터가 추가되면 항상 마지막 index번호를 가지고 있도록 만들것이다.
 		this.stackSize = stackSize;
@@ -29,7 +29,7 @@ class ArrayStack implements Stack{ //interface 구현
 	}
 	
 	public boolean isFull() {
-		return (top == this.stackSize-1); 		//top과 배열의 가장 마지막 index가 같은지 비교하여 반환
+		return (top == this.stackSize-1); 	//top과 배열의 가장 마지막 index가 같은지 비교하여 반환
 	}
 	
 	public void push(char item) {

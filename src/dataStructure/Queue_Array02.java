@@ -6,8 +6,8 @@ package dataStructure;
 //그런 선형 큐의 문제를 해결하기 위해 원형 큐를 사용한다.
 
 class ArrayCQueue implements Queue{
-	private int front;
-	private int rear;
+	private int front;	//기본 큐와 동일하게 front와 rear를 통해 삭제와 삽입이 이루어진다.
+	private int rear;	
 	private int queueSize;
 	private char[] itemArray;
 	

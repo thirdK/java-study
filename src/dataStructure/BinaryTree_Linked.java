@@ -18,7 +18,7 @@ class LinkedTree {
 		root.data = data;
 		root.left = bt1;	//좌측 참조값
 		root.right = bt2;	//우측 참조값
-		return root;	//매개변수로 받아온 값들을 저장한 root 반환
+		return root;	//매개변수로 받아온 값들을 저장한 node 반환
 	}
 	
 	//현재 노드 n을 방문 : D

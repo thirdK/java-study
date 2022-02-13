@@ -22,8 +22,8 @@ class LinkedQueue implements Queue {
 	
 	public void enQueue(char item) { //데이터를 삽입하는 인큐메소드
 		QNode newNode = new QNode();
-		newNode.data = item;	//새노드를 추가할때 매개변수로 가져온 값을 새 노드의 data에
-		newNode.link = null;	//노드를 추가하면 항상 마지막 노드이기때문에 link에 참조값은 null
+		newNode.data = item;	//새노드를 추가할때 매개변수로 가져온 값을 새 노드의 data필드에
+		newNode.link = null;	//노드를 추가하면 항상 마지막 노드이기때문에 link필드에 참조값은 null
 		if(isEmpty()) {
 			front = newNode;	//비어있는 큐라면 처음 추가하는 노드가 유일한 노드이므로
 			rear = newNode;		//front/rear가 같은 곳을 가리킨다.
