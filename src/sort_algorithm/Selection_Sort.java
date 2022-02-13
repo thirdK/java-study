@@ -2,6 +2,10 @@ package sort_algorithm;
 
 //선택정렬 알고리즘
 /*
+1. 전체를 탐색하여 가장 작은 값(또는 큰 값)을 찾는
+2. 찾은 값을 배열의 가장 앞이나 뒤로 보낸다.(교환) 보내진 값은 그자리에 고정된다.(탐색범위에서 제외)
+3. 다시 반복한다.
+
 selectionSolt(a[])
 	n = a의 길이
 	for(i <- 1; i<n; i <- i+1){
@@ -9,11 +13,11 @@ selectionSolt(a[])
 	}
 end selectionSolt()
 
-시간 복잡도는 O(pow(n,2))
+시간 복잡도는 O(n의 2제곱), O(pow(n,2))
 */
 
 
-class Sort{
+class Sort_s{
 	public void selectionSort(int a[]) {	//정렬할 배열을 파라미터로 받는다.
 		int min;	//항상 탐색범위의 가장 작은 값을 저장할 min변수
 		
@@ -46,10 +50,10 @@ class Sort{
 }
 
 
-public class SelectionSort {
+public class Selection_Sort {
 	public static void main(String[] args) {
 		int a[] = {69, 10, 30, 2, 16, 8, 31, 22};
-		Sort S = new Sort();
+		Sort_s S = new Sort_s();
 		System.out.print("\n정렬할 원소 : ");
 		for(int i=0; i<a.length; i++) {
 			System.out.printf(" %d", a[i]);
