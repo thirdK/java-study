@@ -7,13 +7,13 @@ package sort_algorithm;
 3. 다시 반복한다.
 
 selectionSolt(a[])
-	n = a의 길이
+	n <- a의 길이;
 	for(i <- 1; i<n; i <- i+1){
 		a[i], ..., a[n-1] 중에 가장 작은 원소 a[k]를 선택하여, a[i]와 교환한다;
 	}
 end selectionSolt()
 
-시간 복잡도는 O(n의 2제곱), O(pow(n,2))
+시간 복잡도는 O(n^2)
 */
 
 

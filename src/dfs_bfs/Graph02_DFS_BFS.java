@@ -29,9 +29,9 @@ class LinkedStack {	//LinkedStack을 구현(연결 자료구조 방식을 이용
 			System.out.println("삭제 실패! Linked Stack이 비어있습니다.");
 			return 0;
 		} else {	//노드가 있으면
-			int item = top.data;//top이 가리키는(마지막에 삽입된) 노드의 data필드에 
+			int item = top.data;//마지막에 삽입된 노드의 data필드에 
 								//저장된 값을 item에 저장(반환을 해야하므로)
-			top = top.link;		//top이 기존에 가진 참조값은 이제 삭제해야하므로 top이 가리키던 노드가 가진 참조값을 대입 
+			top = top.link;		//마지막 노드는 삭제해야하므로 top이 가리키던 노드를 대입
 			return item;		//삭제하기전에 저장해둔 data 반환
 		}
 	}
@@ -64,7 +64,7 @@ class LinkedQueue {	//LinkedQueue를 구현(연결 자료구조 방식의 큐)
 			front = newNode;	//지금 삽입되는 노드가 첫 노드이기 때문에 큐의 첫번째와 마지막 노드는
 			rear = newNode;		//같은 노드이므로 font와 rear는 같은 노드를 가리킨다.(참조값 저장)
 		} else {				//Queue에 다른 노드가 존재한다면?
-			rear.link = newNode;//rear가 가리키는 노드의 link필드에 새 노드의 참조값을 대입(기존 노드와의 연결)
+			rear.link = newNode;//link필드에 새 노드의 참조값을 대입(기존 노드와의 연결)
 			rear = newNode;		//rear는 항상 마지막 노드의 참조값을 가져야하므로 새 노드의 주소값을 대입
 		}
 	}
@@ -75,7 +75,7 @@ class LinkedQueue {	//LinkedQueue를 구현(연결 자료구조 방식의 큐)
 			return 0;
 		} else {	//큐에 노드가 있다면?
 			int item = front.data;	//반환하기위해 front가 가리키는 노드의 data를 item변수에 저장 
-			front = front.link;		//front가 가진 참조값은 삭제되야하므로 삭제될 노드가 가진 참조값을 front에 대입 
+			front = front.link;		//삭제되야하므로 다음 노드를 저장
 			if (front == null) {	//만약 삭제후 front가 null이라면 이제 공백 큐이므로
 				rear = null;		//rear도 null을 저장하여 공백 큐임을 표현한다.
 			}

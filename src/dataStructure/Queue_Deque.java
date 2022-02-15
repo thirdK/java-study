@@ -35,10 +35,10 @@ class DQueue{
 			newNode.rlink = null;//첫 노드인 newNode는 가리킬 노드가 없으므로 양쪽의 link에 null
 			newNode.llink = null;
 		}else {
-			front.llink = newNode;//첫 노드가 아니라면 front가 가리키던 (기존)노드의 llink에 newNode의 참조값을(front방향에서 삽입하므로)
-			newNode.rlink = front;//newNode의 rlink에는 front가 가리키던 (기존)노드의 참조값을
+			front.llink = newNode;//첫 노드가 아니라면 llink에 newNode의 참조값을(front방향에서 삽입하므로)
+			newNode.rlink = front;//newNode의 rlink에는 front의 참조값을
 			newNode.llink = null;//front 방향에서 newNode는 가장 끝이므로 newNode.llink에는 null을 
-			front = newNode;	//front는 항상 끝 노드를 가리키므로 newNode의 참조값을 저장한다.
+			front = newNode;	//front에 newNode 주소 저장
 		}//(양방향이라 앞, 뒤로 표현하기 애매한거 같아서 양쪽의 끝으로 표현)
 		System.out.println("Front Inserted Item : " + item);
 	}
@@ -46,16 +46,16 @@ class DQueue{
 	public void insertRear(char item) {	//rear에서 삽입하는 메소드
 		DQNode newNode = new DQNode();
 		newNode.data = item;
-		if(isEmpty()) {			//비어있다면
-			front = newNode;	//첫 노드이므로 양쪽다 newNode의 참조값을 저장
+		if(isEmpty()) {			
+			front = newNode;	
 			rear = newNode;
-			newNode.rlink = null;//첫 노드이기에 양쪽 link에 null
+			newNode.rlink = null;
 			newNode.llink = null;
 		}else {
-			rear.rlink = newNode;//첫 노드가 아니라면 rear가 가리키던 (기존)노드의 rlink에 newNode의 참조값을(rear방향에서 삽입하므로)
-			newNode.rlink = null;//rear방향에서 newNode는 가장 끝이므로 newNode.rlink에는 null을 
-			newNode.llink = rear;//newNode의 llink에는 rear가 가리키던 (기존)노드의 참조값을
-			rear = newNode;		//rear는 항상 끝 노드를 가리키므로 newNode의 참조값을 저장한다.
+			rear.rlink = newNode;
+			newNode.rlink = null;
+			newNode.llink = rear;
+			rear = newNode;		
 		}
 		System.out.println("Rear Inserted Item : " + item);
 	}
@@ -68,11 +68,11 @@ class DQueue{
 			return 0;
 		}else {
 			char item = front.data;	//반환할 값을 저장할 item변수
-			if(front.rlink == null) {//프론트가 가리키던 노드의 rlink가 null이면(노드가 1개면)
+			if(front.rlink == null) {//프론트의 rlink가 null이면(노드가 1개면)
 				front = null;		//어차피 더이상 노드는 존재하지 않으므로 front/rear 에 null
 				rear = null;
 			}else {
-				front = front.rlink;//삭제 후에도 노드가 남아있다면 front는 삭제될 노드가 (rlink에서)가리키던 참조값을 가져온다.
+				front = front.rlink;//삭제 후에도 노드가 남아있다면 front는 rlink에서 가리키던 참조값을 가져온다.
 				front.llink = null;	//이제 front가 새로 받아온 참조값의 노드가 덱의 front방향의 끝이므로 llink에 null을 넣는다. 
 			}//위 과정을 통해 기존 노드 1개는 삭제 처리가 된다.
 			return item;

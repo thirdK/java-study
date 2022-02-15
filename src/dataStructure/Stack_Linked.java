@@ -18,7 +18,7 @@ class LinkedStack implements Stack{	//인터페이스 구현
 		StackNode newNode = new StackNode();	//객체선언(참조값을 저장할 공간할당)과 생성(실제값이 저장될 공간 할당)
 		newNode.data = item;		//newNode의 data필드에는 매개변수로 가져온 요소를 넣고
 		newNode.link = top;			//link필드에는 top이 가진 참조값을 넣는다.(리스트가 비어있어서 첫 노드라면 top이 가진 null)
-		top = newNode;				//top에는 새로만든 newNode의 주소값
+		top = newNode;				//top에는 새로만든 newNode의 주소값 저장(이 방식은 개념이해하는 예제로는 안좋은것 같다.)
 		System.out.println("Inserted Item : " + item);
 	}
 	
@@ -27,9 +27,9 @@ class LinkedStack implements Stack{	//인터페이스 구현
 			System.out.println("Deleting fail! Linked Stack is Empty!!");
 			return 0;	//반환할 값이 없으므로 0;
 		}else {
-			char item = top.data;	//char형 item 변수를 만들어 top이 가리키는 노드의 요소를 넣고(반환을 위해)
-			top = top.link;			
-			//top이 가리키고 있는 (삭제될)노드의 link에 저장된 참조값을 가져와 top에 저장 
+			char item = top.data;	//char형 item 변수를 만들어 top의 data요소를 넣고
+			top = top.link;
+			//마지막으로 추가된 노드의 link필드 참조값을 top에 저장
 			//(결과는 마지막 노드의 삭제이다. 기존의 마지막 노드는 더이상 리스트에 포함되지 않음) 
 			return item;			//삭제된 요소를 반환
 		}
@@ -48,7 +48,7 @@ class LinkedStack implements Stack{	//인터페이스 구현
 			System.out.println("Peeking fail! Linked Stack is empty!!");
 			return 0;
 		}else {
-			return top.data;	//참조변수 top이 가리키는 노드의 data를 반환(top은 항상 마지막에 저장된 노드를 가리킨다.)
+			return top.data;	//참조변수 top 노드의 data반환
 		}
 	}
 	
@@ -56,7 +56,7 @@ class LinkedStack implements Stack{	//인터페이스 구현
 		if(isEmpty()) {
 			System.out.printf("Linked Stack is empty!!%n%n");
 		}else {
-			StackNode temp = top;	//temp에 top의 참조값을 넣음 -> 리스트의 시작주소(마지막으로 입력된 노드의 주소) 
+			StackNode temp = top;	//temp에 top의 주소를 대입
 			System.out.print("Linked Stack >> ");
 			while(temp != null) {	//temp가 null이 아니면 반복 -> null이라면 정지(리스트의 처음부터 마지막까지 반복)
 				System.out.printf("%c ", temp.data);

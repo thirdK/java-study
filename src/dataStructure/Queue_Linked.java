@@ -28,8 +28,8 @@ class LinkedQueue implements Queue {
 			front = newNode;	//비어있는 큐라면 처음 추가하는 노드가 유일한 노드이므로
 			rear = newNode;		//front/rear가 같은 곳을 가리킨다.
 		}else {
-			rear.link = newNode;//비어있지 않다면 rear가 가리키는 노드의 link에 새 노드의 참조값을 넣는다.
-			rear = newNode;		//그리고 rear는 새 노드를 가리킨다.(rear는 항상 마지막노드의 참조값을 가져야한다.)
+			rear.link = newNode;//비어있지 않다면 link필드에 새 노드의 참조값을 넣는다.
+			rear = newNode;		//그리고 rear는 새 노드의 주소값을 받는다.
 		}
 		System.out.println("Inserted Item : " + item);
 	}
@@ -41,8 +41,8 @@ class LinkedQueue implements Queue {
 		}else {
 			char item = front.data;	//삭제한 값을 반환하기위해 item변수에 저장 
 			front = front.link;		
-			//front가 가리키는 노드의 link에 저장된 값을 front에 넣는다.
-			//front가 가지는 참조값이 항상 첫노드의 주소이므로 위의 코드는 삭제의 기능을 한다. 
+			//첫 노드의 link 필드에 저장된 참조값을 front에 넣는다.
+			//첫 노드를 삭제하는 기능을 한다. 
 			if(front == null) {	//삭제 후 front가 null이면 빈 큐가되므로 front/rear둘다 null이여야 한다.
 				rear = null;
 			}
@@ -61,12 +61,12 @@ class LinkedQueue implements Queue {
 		}
 	}
 	
-	public char peek() {	//검색을하는 픽메소드 front가 가리키는 값을 반환
+	public char peek() {	//검색을하는 메소드 가장 앞의 데이터 반환
 		if (isEmpty()) {
 			System.out.println("Peeking fail! Linked Queue is empty!!");
 			return 0;
 		} else {
-			return front.data; // front가 가리키는 노드의 data를 반환.
+			return front.data; //노드의 data를 반환.
 		}
 		
 	}

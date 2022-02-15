@@ -10,7 +10,7 @@ package sort_algorithm;
 5.처음부터 반복한다.
 
 bubbleSort(a[])
-	n = 배열 a의 길이
+	n <- 배열 a의 길이;
 	for(i <- n-1; i > 0; i <- i-1){
 		for(j <- 0; j < i; j <- j+1){
 			if(a[j] > a[j+1]) then{
@@ -23,7 +23,7 @@ bubbleSort(a[])
 end bubbleSort() 
 */
 
-//시간 복잡도는 O(n의 2제곱), O(pow(n,2))
+//시간 복잡도는 O(n^2)
 
 class Sort_b{
 	public void bubbleSort(int a[]) {
