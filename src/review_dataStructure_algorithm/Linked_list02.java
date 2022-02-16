@@ -1,6 +1,6 @@
 package review_dataStructure_algorithm;
 
-class LinkedList{
+class LinkedList2{
 	Node2 header; 
 	//header의 역할만 하게될 data필드가 비어있는 노드
 	//link필드는 list의 시작지점을 알려줌
@@ -10,7 +10,7 @@ class LinkedList{
 		Node2 next = null;
 	}
 	
-	public LinkedList() {
+	public LinkedList2() {
 		header = new Node2(); 
 		//LinkedList클래스로 객체를 생성하면 header에 새 노드가 할당되는데 이 노드는 list의 시작노드를 알려주는 역할만 함
 	}
@@ -52,7 +52,7 @@ class LinkedList{
 
 public class Linked_list02 {
 	public static void main(String[] args) {
-		LinkedList ll = new LinkedList();
+		LinkedList2 ll = new LinkedList2();
 		ll.append(10);
 		ll.append(20);
 		ll.append(30);
