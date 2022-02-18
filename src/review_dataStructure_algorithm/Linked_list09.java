@@ -44,8 +44,6 @@ public class Linked_list09 {
 //		l2.append(3);
 		l2.retrieve();
 	
-//		int a = getListLength(l1.get(1));
-//		System.out.println(">>"+a);
 		Node n = sumLists(l1.get(1), l2.get(1));
 		while(n.next != null) {
 			System.out.print(n.data + " -> ");
