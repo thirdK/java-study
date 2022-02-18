@@ -1,5 +1,20 @@
 package review_dataStructure_algorithm;
 
+
+class Node {
+	int data;
+	Node next = null;
+	
+	public Node() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Node(int data) {
+		this.data = data;
+		next = null;
+	}
+}
+
 public class LinkedList {
 	Node header;
 
