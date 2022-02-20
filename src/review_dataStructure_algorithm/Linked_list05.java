@@ -1,6 +1,6 @@
 package review_dataStructure_algorithm;
 
-class LinkedList5 extends LinkedList{	
+class LinkedList5 extends Linked_List{	
 	Node getFirst() { //이름처럼 첫 노드를 찾아서 return하는 메소드
 		Node n = header;
 		return n.next;

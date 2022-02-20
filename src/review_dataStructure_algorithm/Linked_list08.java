@@ -8,7 +8,7 @@ package review_dataStructure_algorithm;
 // 둘의 합은 975 = 5->7->9 로 반환
 // 자리수가 다르거나, 10이넘어 자리수가 넘어가는 상황도 생각
 
-class LinkedList8 extends LinkedList {
+class LinkedList8 extends Linked_List {
 
 	Node get(int d) { //d번째 노드를 반환받는 메소드
 		Node n = header;

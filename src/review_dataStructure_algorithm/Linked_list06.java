@@ -1,6 +1,6 @@
 package review_dataStructure_algorithm;
 
-class LinkedList6 extends LinkedList {
+class LinkedList6 extends Linked_List {
 
 	Node getFirst() {
 		Node n = header;

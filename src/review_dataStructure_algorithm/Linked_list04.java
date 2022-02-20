@@ -1,7 +1,7 @@
 package review_dataStructure_algorithm;
 //노드는 Node 클래스로 뺐음
 
-class LinkedList4 extends LinkedList{
+class LinkedList4 extends Linked_List{
 //	상속으로 처리함
 	
 	Node getFirst() { //이름처럼 첫 노드를 찾아서 return하는 메소드

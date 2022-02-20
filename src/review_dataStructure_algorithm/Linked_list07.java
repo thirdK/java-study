@@ -4,7 +4,7 @@ package review_dataStructure_algorithm;
 //단, 첫번째 노드가 어딨는지 모르고, 오직 삭제할 노드만 갖고 있다.
 
 
-class LinkedList7 extends LinkedList {
+class LinkedList7 extends Linked_List {
 	
 	Node getFirst() {
 		Node n = header;

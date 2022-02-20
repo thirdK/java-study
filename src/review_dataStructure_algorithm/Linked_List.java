@@ -61,11 +61,11 @@ class Node {
 	}
 }
 
-public class LinkedList {
+public class Linked_List {
 
 	Node header;
 
-	public LinkedList() {
+	public Linked_List() {
 		header = new Node();
 	}
 

@@ -11,7 +11,7 @@ package review_dataStructure_algorithm;
 //여기서는 거꾸로 carry에 값을 돌려 받아야하는데 그러면 정작 합계결과를 가지는 노드를 받아올 수 없다. 
 //그래서 carry와 node를 객체에 넣어서 받아낸다.
 
-class LinkedList9 extends LinkedList{
+class LinkedList9 extends Linked_List{
 	Node get(int d) { //d번째 노드를 반환받는 메소드
 		Node n = header;
 		int cnt=0;
