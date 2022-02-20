@@ -46,6 +46,16 @@ class Stack<T>{	//데이터 타입을 따로 명시하도록 제네릭 사용
 	public boolean isEmpty() {
 		return top == null;
 	}
+
+	public int size() {
+		Node<T> p = top;
+		int count = 0;
+		while(p != null) {
+			p = p.next;
+			count++;
+		}
+		return count;
+	}
 }
 
 public class Stack01 {
