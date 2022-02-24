@@ -24,7 +24,7 @@ class Queue<T> {
 	private Node<T> front;
 	private Node<T> rear;
 	
-	void add(T d) {
+	void enqueue(T d) {
 		Node<T> n = new Node<T>(d);
 		if(rear != null) {
 			rear.next = n;
@@ -35,7 +35,7 @@ class Queue<T> {
 		}
 	}
 	
-	T remove() {
+	T dequeue() {
 		if(front == null) {
 			throw new NullPointerException();
 		}
@@ -194,17 +194,17 @@ public class Queue_Test {
 		
 //		Queue<Integer> q1 = new Queue<Integer>();
 //		
-//		q1.add(1);
-//		q1.add(2);
-//		q1.add(3);
-//		q1.add(4);
+//		q1.enqueue(1);
+//		q1.enqueue(2);
+//		q1.enqueue(3);
+//		q1.enqueue(4);
 //		
-//		System.out.println(q1.remove());
+//		System.out.println(q1.dequeue());
 //		System.out.println(q1.peek());
-//		System.out.println(q1.remove());
-//		System.out.println(q1.remove());
+//		System.out.println(q1.dequeue());
+//		System.out.println(q1.dequeue());
 //		System.out.println(q1.isEmpty());
-//		System.out.println(q1.remove());
+//		System.out.println(q1.dequeue());
 //		System.out.println(q1.isEmpty());
 	}
 	
