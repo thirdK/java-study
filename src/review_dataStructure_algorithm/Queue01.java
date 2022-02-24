@@ -22,7 +22,7 @@ class Queue<T>{	//제네릭사용
 	private Node<T> first; // Queue는 두 개의 포인터가 필요함(가장 앞, 가장 뒤를 가리키는 참조변수)
 	private Node<T> last;
 	
-	public void add(T item) {//데이터 삽입은 뒤에서 이루어짐
+	public void enqueue(T item) {//데이터 삽입은 뒤에서 이루어짐
 		Node<T> t = new Node<T>(item);
 		
 		if(last != null) {//빈 Queue가 아니라면
@@ -34,7 +34,7 @@ class Queue<T>{	//제네릭사용
 		}
 	}
 	
-	public T remove() {//데이터의 삭제는 앞에서 이루어짐
+	public T dequeue() {//데이터의 삭제는 앞에서 이루어짐
 		if (first == null) {//공백이면 에러 던지고
 			throw new NoSuchElementException();
 		}
@@ -65,19 +65,19 @@ public class Queue01 {
 	public static void main(String[] args) {
 		Queue<Integer> q = new Queue<Integer>();
 		
-		q.add(1);
-		q.add(2);
-		q.add(3);
-		q.add(4);
+		q.enqueue(1);
+		q.enqueue(2);
+		q.enqueue(3);
+		q.enqueue(4);
 		
-		System.out.println(q.remove());
-		System.out.println(q.remove());
+		System.out.println(q.dequeue());
+		System.out.println(q.dequeue());
 		System.out.println(q.peek());
-		System.out.println(q.remove());
+		System.out.println(q.dequeue());
 		System.out.println(q.isEmpty());
-		System.out.println(q.remove());
+		System.out.println(q.dequeue());
 		System.out.println(q.isEmpty());
-		System.out.println(q.peek());
+//		System.out.println(q.peek());
 	}
 }
 
