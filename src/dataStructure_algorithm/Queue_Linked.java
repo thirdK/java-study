@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure_algorithm;
 
 //연결 자료구조 방식으로 연결 큐를 구현
 

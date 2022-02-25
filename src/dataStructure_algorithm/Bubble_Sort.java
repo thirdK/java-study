@@ -1,4 +1,4 @@
-package sort_algorithm;
+package dataStructure_algorithm;
 
 //버블정렬 알고리즘
 /*

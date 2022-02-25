@@ -10,7 +10,7 @@ import java.util.Stack;
 //너비우선탐색(BFS) -> Queue 구현
 //DFS - Recursion(재귀를 사용하여 DFS 구현)
 
-class Graph{
+class Graph1{
 	class Node{
 		int data;
 		LinkedList<Node> adjacent;
@@ -25,7 +25,7 @@ class Graph{
 	
 	Node[] nodes;
 	
-	public Graph(int size) {
+	public Graph1(int size) {
 		nodes = new Node[size];
 		
 		for(int i=0; i<size; i++) {
@@ -120,7 +120,7 @@ class Graph{
 
 public class DFS_BFS {
 	public static void main(String[] args) {
-		Graph g = new Graph(9);
+		Graph1 g = new Graph1(9);
 		g.addEdge(0, 1);
 		g.addEdge(1, 2);
 		g.addEdge(1, 3);

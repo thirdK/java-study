@@ -1,4 +1,4 @@
-package sort_algorithm;
+package dataStructure_algorithm;
 
 //선택정렬 알고리즘
 /*

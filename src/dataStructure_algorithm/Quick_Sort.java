@@ -1,4 +1,4 @@
-package sort_algorithm;
+package dataStructure_algorithm;
 
 /*
 퀵 정렬은 정렬할 전체 요소에 대해 정렬을 수행하지 않는다.

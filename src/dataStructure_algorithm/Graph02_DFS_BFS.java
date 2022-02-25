@@ -1,16 +1,16 @@
-package dfs_bfs;
+package dataStructure_algorithm;
 
 //DFS : 깊이우선탐색	BFS : 너비우선탐색
 
 
 //DFS는 LIFO구조의 스택을 사용한다.
-class StackNode {	//스택에 노드를 구현	
+class StackNode1 {	//스택에 노드를 구현	
 	int data;
-	StackNode link;
+	StackNode1 link;
 }
 
-class LinkedStack {	//LinkedStack을 구현(연결 자료구조 방식을 이용한 스택)
-	StackNode top;	//Stack은 항상 마지막에 들어온 값을 가리키는 참조변수가 필요하다(top)
+class LinkedStack1 {	//LinkedStack을 구현(연결 자료구조 방식을 이용한 스택)
+	StackNode1 top;	//Stack은 항상 마지막에 들어온 값을 가리키는 참조변수가 필요하다(top)
 					//스택의 삽입과 삭제는 top을 통해 이루어진다.
 
 	public boolean isEmpty() {
@@ -18,7 +18,7 @@ class LinkedStack {	//LinkedStack을 구현(연결 자료구조 방식을 이용
 	}
 
 	public void push(int item) {	//stack에 노드를 삽입하는 push() 메소드
-		StackNode newNode = new StackNode();	//새로운 노드 객체를 생성
+		StackNode1 newNode = new StackNode1();	//새로운 노드 객체를 생성
 		newNode.data = item;	//생성된 노드의 data필드에 매개변수로 받은 값을 저장
 		newNode.link = top;		//생성된 노드의 link필드에 top이 가진 참조값을 저장
 		top = newNode;			//top에 newNode의 주소를 저장
@@ -38,16 +38,16 @@ class LinkedStack {	//LinkedStack을 구현(연결 자료구조 방식을 이용
 }
 
 //BFS는 FIFO구조의 큐를 사용한다.
-class QNode {	//큐에 사용할 노드 구현
+class QNode1 {	//큐에 사용할 노드 구현
 	int data;
-	QNode link;
+	QNode1 link;
 }
 
-class LinkedQueue {	//LinkedQueue를 구현(연결 자료구조 방식의 큐)
-	QNode front;
-	QNode rear;
+class LinkedQueue1 {	//LinkedQueue를 구현(연결 자료구조 방식의 큐)
+	QNode1 front;
+	QNode1 rear;
 
-	public LinkedQueue() { 	//연결큐는 한쪽에서는 노드가 삽입되고 반대쪽에서는 노드가 삭제된다.
+	public LinkedQueue1() { 	//연결큐는 한쪽에서는 노드가 삽입되고 반대쪽에서는 노드가 삭제된다.
 		front = null;		//front 참조변수는 삭제하는 방향
 		rear = null;		//rear는 삽입하는 방향이며 공백상태를 표현하기 위해 둘다 null로 초기화한다.
 	}						//front는 항상 가장먼저들어온 노드를 rear는 가장 나중에들어온 노드를 가리킨다.
@@ -57,7 +57,7 @@ class LinkedQueue {	//LinkedQueue를 구현(연결 자료구조 방식의 큐)
 	}							//front가 null이면 큐는 공백상태이다.
 
 	public void enQueue(int item) {	//큐에 노드를 삽입하는 enQueue()메소드
-		QNode newNode = new QNode();//새 노드를 만들고
+		QNode1 newNode = new QNode1();//새 노드를 만들고
 		newNode.data = item;	//새 노드의 data필드에 매개변수로 가져온 값을 저장
 		newNode.link = null;	//link필드에는 null을 저장
 		if (isEmpty()) {		//Queue가 비어있다면?
@@ -84,13 +84,13 @@ class LinkedQueue {	//LinkedQueue를 구현(연결 자료구조 방식의 큐)
 	}
 }
 
-class GraphNode {	//그래프에서 사용할 노드 구현
+class GraphNode1 {	//그래프에서 사용할 노드 구현
 	int vertex;		//정점
-	GraphNode link;
+	GraphNode1 link;
 }
 
-class AdjList {		//인접리스트를 구현
-	GraphNode head[] = new GraphNode[10];	//각 정점의 참조값을 저장할 배열(참조변수들이 모인 배열)
+class AdjList1 {		//인접리스트를 구현
+	GraphNode1 head[] = new GraphNode1[10];	//각 정점의 참조값을 저장할 배열(참조변수들이 모인 배열)
 											//각 정점의 시작지점인 head들의 배열
 	private int totalV = 0;	//총 정점의 수를 저장할 변수
 
@@ -102,7 +102,7 @@ class AdjList {		//인접리스트를 구현
 		if (v1 >= totalV || v2 >= totalV) {//정점이 총 정점수보다 클 수는 없음
 			System.out.println("그래프에 없는 정점입니다!!");
 		} else {//존재하는 정점이라면
-			GraphNode gNode = new GraphNode();//새 노드를 생성
+			GraphNode1 gNode = new GraphNode1();//새 노드를 생성
 			gNode.vertex = v2;	//새 노드의 vertex필드에 v2정점값 추가
 			gNode.link = head[v1];//새 노드의 link필드에 head[v1]이 가진 참조값을 대입
 			head[v1] = gNode;	//head[v1]은 새 노드의 주소값을 대입
@@ -111,7 +111,7 @@ class AdjList {		//인접리스트를 구현
 	}
 
 	public void printAdjList() {
-		GraphNode gNode = new GraphNode();
+		GraphNode1 gNode = new GraphNode1();
 		for (int i = 0; i < totalV; i++) {
 			System.out.printf("\n정점 %c의 인접리스트 ", i + 65); //대문자 알파벳으로 표현하기 위해 +65
 			gNode = head[i];	//모든 정점의 시작지점 head가 가진 참조값을 gNode변수에 저장
@@ -123,8 +123,8 @@ class AdjList {		//인접리스트를 구현
 	}
 
 	public void DFS(int v) {	//DFS 깊이우선탐색 (매개변수로 탐색을 시작할 '시작 정점' v를 받는다.)
-		GraphNode w = new GraphNode();	//w는 인접 정점을 나타내는데 사용할 객체
-		LinkedStack S = new LinkedStack();//DFS는 LIFO구조의 Stack을 사용한다. 
+		GraphNode1 w = new GraphNode1();	//w는 인접 정점을 나타내는데 사용할 객체
+		LinkedStack1 S = new LinkedStack1();//DFS는 LIFO구조의 Stack을 사용한다. 
 		boolean visited[] = new boolean[10];
 		//정점의 방문 여부를 표시하기 위한 visited배열
 		//방문하지 않은 상태에 저장된 값은 전부 false이다.(배열은 초기값 설정안하면 자동 false)
@@ -160,8 +160,8 @@ class AdjList {		//인접리스트를 구현
 
 	
 	public void BFS(int v) {	//BFS 너비우선탐색 (매개변수로 탐색을 시작할 '시작 정점' v을 받는다.)
-		GraphNode w = new GraphNode();	//인접 정점을 저장할 w
-		LinkedQueue Q = new LinkedQueue();//BFS는 FIFO구조의 Queue를 사용한다.
+		GraphNode1 w = new GraphNode1();	//인접 정점을 저장할 w
+		LinkedQueue1 Q = new LinkedQueue1();//BFS는 FIFO구조의 Queue를 사용한다.
 		boolean visited[] = new boolean[10];//방문 여부를 표시할 visited배열
 		visited[v] = true;	//시작 정점 방문표시
 		System.out.printf(" %c", v + 65);//대문자 알파벳으로 출력함
@@ -184,7 +184,7 @@ class AdjList {		//인접리스트를 구현
 
 public class Graph02_DFS_BFS {
 	public static void main(String[] args) {
-		AdjList G9 = new AdjList();
+		AdjList1 G9 = new AdjList1();
 
 		for (int i = 0; i < 7; i++) {
 			G9.insertVertex(i);

@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure_algorithm;
 
 //순차 자료구조 방식으로 원형 큐를 구현
 //선형큐는 빈자리를 인식하지 못하는 경우가 생긴다. 그 빈자리를 사용하기위해서

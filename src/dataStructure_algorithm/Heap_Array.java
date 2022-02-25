@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure_algorithm;
 
 //순차 자료구조를 이용해 최대 힙 프로그램 만들기
 //Heap은 완전 이진트리에 있는 노드 중 키값이 가장 크거나 가장 작은 노드를 찾기위해 만든 자료구조이다

@@ -1,4 +1,4 @@
-package dataStructure;
+package dataStructure_algorithm;
 
 //덱은 큐의 양끝에서 삽입과 삭제가 모두 가능하다.
 //이중 연결 리스트를 이용한 덱 구현

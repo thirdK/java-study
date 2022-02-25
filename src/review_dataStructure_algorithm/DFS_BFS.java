@@ -11,7 +11,7 @@ import java.util.LinkedList;
 
 
 //Queue, Stack은 이전에 만들어둔 클래스를 사용함
-class Graph {
+class Graph1 {
 	
 	class Node{
 		int data;		//노드 클래스 만드는데 data는 정수형으로 간단히
@@ -29,7 +29,7 @@ class Graph {
 	Node[] nodes;	//그래프는 노드들을 저장할 배열이 필요함
 	
 	//간단한 구현을 위해 그래프의 노드 개수는 고정함
-	Graph(int size){
+	Graph1(int size){
 		nodes = new Node[size];		//노드 개수를 받아서 그 수만큼 배열을 생성
 		for (int i=0; i<size; i++) {//편의를 위해 데이터와 배열방 번호를 동일하게 만듬
 			nodes[i] = new Node(i);//생성자를 통해 배열의 i번째 방에 i data를 가진 노드들이 할당됨
@@ -129,7 +129,7 @@ class Graph {
 */
 public class DFS_BFS {
 	public static void main(String[] args) {
-		Graph g = new Graph(9);
+		Graph1 g = new Graph1(9);
 		g.addEdge(0, 1);
 		g.addEdge(1, 2);
 		g.addEdge(1, 3);
