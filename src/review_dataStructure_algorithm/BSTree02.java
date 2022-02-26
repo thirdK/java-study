@@ -48,7 +48,7 @@ class Tree2{
 	}
 	
 	//LinkedList를 ArrayList에 담아서 사용하려고 함
-	//(새 LinkedList를 만들었을 때 직전 LinkedList를 찾기 위함?)
+	//(새 리스트를 만들면 이전 리스트를 찾아야해서 배열에 담음)
 	ArrayList<LinkedList<Node>> BSTtoList(){	//재귀호출하기 전에 초기값만 던져줄 메소드
 		ArrayList<LinkedList<Node>> lists = new ArrayList<LinkedList<Node>>();
 		BSTtoList(root, lists, 0);	//이진 트리의 시작노드, 결과를 담을 배열, level초기값을 넘겨줌
