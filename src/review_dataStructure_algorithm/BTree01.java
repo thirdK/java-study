@@ -68,7 +68,7 @@ class Tree{
 }
 
 
-public class Binary_Tree {
+public class BTree01 {
 	public static void main(String[] args) {
 		Tree t = new Tree();
 		NodeT n4 = t.makeNode(null, 4, null);
