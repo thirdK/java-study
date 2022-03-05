@@ -1,5 +1,6 @@
 package review_dataStructure_algorithm;
-//노드는 Node 클래스로 뺐음
+
+//노드 뒤에서부터 검색하기
 
 class LinkedList4 extends Linked_List{
 //	상속으로 처리함
