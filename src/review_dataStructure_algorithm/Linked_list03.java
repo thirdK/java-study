@@ -46,7 +46,9 @@ class LinkedList3 {
 
 	void removeDups() {//중복값을 삭제하는 메소드
 		Node3 n = header;//n포인터
-		while(n != null && n.next != null) {
+		
+		//여기서 순서 조심하기 n이 이미 null이면 n.next에 접근하다가 오류가 나므로 n!=null조건이 먼저 나와야함
+		while(n != null && n.next != null) { 
 			Node3 r = n;//r포인터는 n부터 시작해서 list의 끝까지 검사
 			while(r.next != null) {
 				//r의 다음 노드가 null이 아니면 반복되므로 마지막노드에는 가지 않는다.(마지막노드 위치에서 반복문 실행안한다.)
