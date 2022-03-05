@@ -1,5 +1,5 @@
 package review_dataStructure_algorithm;
-//어떤 숫자를 자리수벼로 한개씩 Linked List에 담았는데 
+//어떤 숫자를 자리수별로 한개씩 Linked List에 담았는데 
 
 //1의 자리가 헤더에 오도록 거꾸로담은 Linked List가 두개가 있다고 가정한다.
 //이 두개의 Linked List를 합산하고 같은식으로 Linked List에 담아서 반환하는 문제
