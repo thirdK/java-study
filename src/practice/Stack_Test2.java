@@ -47,30 +47,84 @@ class Stack00<T>{
 	boolean isEmpty() {
 		return top.link == null;
 	}
+}
+
+//두 개의 stack으로 하나의 Queue만들기
+//old/new stack을 만들고 
+//큐의 back(rear)의 기능 -> 새로 추가되는 기능은 new satck
+//큐의 front의 기능 -> 지우거나 peek의 기능은 old stack
+
+//new에 노드를 담아두다가 delete/peek 같은 기능을 호출하면
+//new에 있는 노드를 전부 old로 push한다.(단 old는 isEmpty() == true)
+//new가 공백 stack이 되면 old를 pop/peek 한다.
+
+class MyQueue00<T>{
+	Stack00<T> stackOldest, stackNewest;
 	
+	public MyQueue00() {
+		stackOldest = new Stack00<>();
+		stackNewest = new Stack00<>();
+	}
 	
+	void add(T data){
+		stackNewest.push(data);
+	}
+	
+	void shiftStacks() {
+		if(stackOldest.isEmpty()) {
+			while(!stackNewest.isEmpty()) {
+				stackOldest.push(stackNewest.pop()); 
+			}
+		}
+	}
+	
+	T peek() {
+		shiftStacks();
+		return stackOldest.peek();
+	}
+	
+	T delete() {
+		shiftStacks();
+		return stackOldest.pop();
+	}
 	
 }
 
+
+
 public class Stack_Test2 {
 	public static void main(String[] args) {
-		Stack00<Integer> s = new Stack00<>();
-		s.push(6);
-		s.push(1);
-		s.push(3);
-		s.push(4);
-		s.push(2);
-		s.push(5);
+		MyQueue00<Integer> q = new MyQueue00<>();
+		q.add(1);
+		q.add(2);
+		q.add(3);
+		q.add(4);
+		q.add(5);
 		
-		sort(s);
+		System.out.println(q.delete());
+		System.out.println(q.delete());
+		System.out.println(q.delete());
+		System.out.println(q.delete());
+		System.out.println(q.delete());
 		
-		System.out.println(s.pop());
-		System.out.println(s.pop());
-		System.out.println(s.pop());
-		System.out.println(s.pop());
-		System.out.println(s.pop());
-		System.out.println(s.pop());
-		System.out.println(s.isEmpty());
+		
+//		Stack00<Integer> s = new Stack00<>();
+//		s.push(6);
+//		s.push(1);
+//		s.push(3);
+//		s.push(4);
+//		s.push(2);
+//		s.push(5);
+//		
+//		sort(s);
+//		
+//		System.out.println(s.pop());
+//		System.out.println(s.pop());
+//		System.out.println(s.pop());
+//		System.out.println(s.pop());
+//		System.out.println(s.pop());
+//		System.out.println(s.pop());
+//		System.out.println(s.isEmpty());
 		
 	}
 	
