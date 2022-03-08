@@ -15,29 +15,21 @@ import java.util.LinkedList;
 //특정 종류를 지정하지 않으면 두 클래스 객체중 가장 순번이 빠른 객체를 반환
 
 enum AnimalType3{
-	CAT, DOG;
+	DOG, CAT;
 }
 
-abstract class Animal3{
+class Animal3{
 	AnimalType3 type;
+	int order;
 	String name;
-	private int order;
 	
 	public Animal3(String name, AnimalType3 type) {
 		this.name = name;
 		this.type = type;
 	}
-
-	public int getOrder() {
-		return order;
-	}
-
-	public void setOrder(int order) {
-		this.order = order;
-	}
 	
 	String info() {
-		return order +" "+ type + " - " + name;
+		return order + ")" + type + " - " + name; 
 	}
 }
 
@@ -53,46 +45,45 @@ class Cat3 extends Animal3{
 	}
 }
 
-// 결국 LinkedList로 Queue구현하는게 핵심이다.
 class AnimalShelter3{
-	LinkedList<Dog3> dogs = new LinkedList<>();
-	LinkedList<Cat3> cats = new LinkedList<>();
-	
+	LinkedList<Dog3> dogs = new LinkedList<Dog3>();
+	LinkedList<Cat3> cats = new LinkedList<Cat3>();
 	int order;
 	
 	public AnimalShelter3() {
-		order = 1;
+		order=1;
 	}
 	
 	void enqueue(Animal3 animal) {
-		animal.setOrder(order++);
-		if(animal.type == AnimalType3.DOG) {
-			dogs.addLast((Dog3)animal);
-		}else if(animal.type == AnimalType3.CAT) {
-			cats.addLast((Cat3)animal);
+		animal.order = this.order++;
+		
+		if(AnimalType3.DOG == animal.type) {
+			dogs.add((Dog3)animal);
+		}else if(AnimalType3.CAT == animal.type) {
+			cats.add((Cat3)animal);
 		}
 	}
 	
-	Animal3 dequeueDog() {
-		return dogs.pollFirst();
+	Dog3 dequeueDog() {
+		return dogs.poll();
 	}
 	
-	Animal3 dequeueCat() {
-		return cats.pollFirst();
+	Cat3 dequeueCat() {
+		return cats.poll();
 	}
 	
 	Animal3 dequeue() {
-		if(dogs.isEmpty() && cats.isEmpty()) return null;
-		else if(dogs.isEmpty()) return cats.poll();
+		if(dogs.isEmpty()) return cats.poll();
 		else if(cats.isEmpty()) return dogs.poll();
 		
-		if(dogs.peek().getOrder() > cats.peek().getOrder()) {
-			return cats.pollFirst();
-		}
-		return dogs.pollFirst();
+		if(dogs.peek().order > cats.peek().order) return cats.poll();
+		else return dogs.poll();
 	}
-	
 }
+
+
+
+
 
 public class Queue_Test3 {
 	public static void main(String[] args) {
@@ -116,9 +107,9 @@ public class Queue_Test3 {
 		System.out.println(c1.info());
 		System.out.println();
 		System.out.println(as.dequeue().info());
+		System.out.println(as.dequeueCat().info());
 		System.out.println(as.dequeue().info());
-		System.out.println(as.dequeue().info());
-		System.out.println(as.dequeue().info());
+		System.out.println(as.dequeueDog().info());
 		System.out.println(as.dequeue().info());
 		System.out.println(as.dequeue().info());
 	}
