@@ -143,12 +143,19 @@ public class MyVector implements List{
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
+		for(int i=0; i<size; i++) {
+			if(data[i] == o) return true;
+		}
 		return false;
 	}
 	@Override
 	public boolean containsAll(Collection c) {
 		// TODO Auto-generated method stub
-		return false;
+		for(Object obj : c.toArray()) {
+			if(!(contains(obj))) return false; 
+		}
+		
+		return true;
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -241,5 +248,8 @@ public class MyVector implements List{
 		for(int i=0; i < v2.size(); i++) {
 			System.out.print(v2.get(i) + " "); ;
 		}
+		System.out.println();
+		
+		System.out.println(v.containsAll(v2));
 	}
 }
