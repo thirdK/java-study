@@ -10,7 +10,7 @@ package exam;
 //즉, 해당 메소드에서 try catch로 예외를 처리하고 다시 예외를 발생시켜서 (throw)
 //메소를 호출한 쪽에서도 예외처리를하게끔 하는것이다.
 
-public class Throwing {
+public class Throws01 {
 
 	public static void main(String[] args) {
 		try {
