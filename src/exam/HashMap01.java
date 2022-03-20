@@ -18,6 +18,7 @@ public class HashMap01 {
 		
 		Set set = map.entrySet();//키와 값을 엔트리(키와 값의 결합) 형태로 set에 저장하여 반환
 		Iterator it = set.iterator();
+		//Iterator it = map.entrySet().iterator(); -> 어차피 set을 활용안하므로 바로 변환해서 사용해도됨
 		
 		//Map.Entry는 Map인터페이스에 정의된 static inner interface이다.
 		//HashMap은 내부에서 Entry라는 내부클래스를 정의하고(key, value 필드가 존재함) 
@@ -30,7 +31,7 @@ public class HashMap01 {
 		//							Object value;
 		//						}
 		while(it.hasNext()) {
-			Map.Entry e = (Map.Entry)it.next(); //Map.Entry 참조변수로 엔트리형태로 저장된 it를 참조
+			Map.Entry e = (Map.Entry)it.next(); //it의 요소는 엔트리이므로 Map.Entry 참조변수로 받음
 			System.out.println("이름 : " + e.getKey() + ", 점수 : " + e.getValue());
 		}
 		
