@@ -21,6 +21,8 @@ public class Properties01 {
 		
 		//prop에 저장된 요소들을 Enumeration을 이용해서 출력한다.
 		Enumeration e = prop.propertyNames(); //propertyNames()메소드는 모든 key를 Enumeration으로 반환
+		//Properties는 컬렉션 프레임웍 이전의 구버전이라서 Iterator가 아닌 Enumeration을 사용한다.
+		
 		while(e.hasMoreElements()) {
 			String element = (String)e.nextElement();//e가 가진 모든 키를 하나씩 가져와서 element에 저장
 			System.out.println(element + " = " + prop.getProperty(element));//해당 키로 값을 가져옴
