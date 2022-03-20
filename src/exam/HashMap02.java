@@ -52,10 +52,10 @@ public class HashMap02 {
 	//정화번호부 전체를 출력하는 메서드
 	static void printList() {
 		Set	set = phoneBook.entrySet();
-		Iterator it = set.iterator(); //map의 엔트리 -> set -> iterator 가공처리
+		Iterator it = set.iterator(); //map의 엔트리 -> set -> iterator
 		
 		while(it.hasNext()) {
-			Map.Entry e = (Map.Entry)it.next(); //엔트리를 Map.Entry 참조변수로 받음
+			Map.Entry e = (Map.Entry)it.next(); //it의 요소는 엔트리이므로 Map.Entry 참조변수로 받음
 			
 			Set subSet = ((HashMap)e.getValue()).entrySet(); //여기서 e의 값은 또다시 해쉬맵 그 해쉬맵의 엔트리
 			Iterator subIt = subSet.iterator();//내부에 있는 해쉬맵의 iter
