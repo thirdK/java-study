@@ -40,8 +40,8 @@ class Tree02 {
 	//Balanced() 밸런스가 맞는지 확인할 메소드 
 	boolean isBalanced(Node root) {		//(노드 주소를 받음)
 		if(root == null) return true;	//마지막 노드를 지나면 더 이상 진행하지 않음
-		int hightDiff = getHeight(root.left) - getHeight(root.right); //양쪽 서브트리의 차이를 구함
-		if(Math.abs(hightDiff) > 1) { //차이가 1을 초과하면 (abs()는 절대값을 반환)
+		int heightDiff = getHeight(root.left) - getHeight(root.right); //양쪽 서브트리의 차이를 구함
+		if(Math.abs(heightDiff) > 1) { //차이가 1을 초과하면 (abs()는 절대값을 반환)
 			return false;	//false 반환
 		}else {	//그렇지 않으면 &&연산자를 통해 둘다 밸런스가 맞는 경우에만 true를 반환
 			return isBalanced(root.left) && isBalanced(root.right);
